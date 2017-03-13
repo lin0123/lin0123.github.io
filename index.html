@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滴滴嗒嗒</title>
+    <link rel="stylesheet" href="css/clock.css">
+    <link rel="icon" href="images/clock.jpg">
+</head>
+<body>
+<canvas id="canvas"></canvas>
+</body>
+<script src="js/clock.js"></script>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var H = document.querySelector("body").offsetHeight;
+    var W = document.querySelector("body").offsetWidth;
+    canvas.height = H - 2;
+    canvas.width = W - 2;
+    //    准备数据,可传入多个数据
+    var obj = {
+        bigX: W / 2,//时钟心中X
+        bigY: H / 2,//时钟中心Y
+        bigRadius: 280,//时钟半径
+        longLength: 60,//长刻度的长
+        shortLength: 20,//短刻度的长
+        longLineWidth: 12,//长刻度的宽
+        shortLineWidth: 6,//短刻度的宽
+        longLineColor: "red",//长刻度的颜色
+        shortLineColor: "green",//短刻度的颜色
+        textGap: 95,//文字与长刻度的距离
+        clockCenter: 20,//时钟中心原点
+        secondLine: 260,//秒钟指针的长
+        minuLine: 240,//分钟指针的长
+        hourLine: 190//时钟指针的长
+    };
+    //    调用时钟创建函数
+    Clock(ctx, obj);
+
+</script>
+</html>
